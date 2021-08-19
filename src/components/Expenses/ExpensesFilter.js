@@ -1,5 +1,5 @@
 import React from 'react'
-
+import PropTypes from 'prop-types'
 import './ExpensesFilter.css'
 
 const ExpensesFilter = (props) => {
@@ -20,6 +20,11 @@ const ExpensesFilter = (props) => {
             </div>
         </div>
   )
+}
+
+ExpensesFilter.propTypes = {
+  selected: PropTypes.string,
+  onChangeFilter: PropTypes.any
 }
 
 export default ExpensesFilter

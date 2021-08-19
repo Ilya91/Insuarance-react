@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
 import './ExpenseForm.css'
+import PropTypes from 'prop-types'
 
 const ExpenseForm = (props) => {
   const [enteredTitle, setEnteredTitle] = useState('')
   const [enteredAmount, setEnteredAmount] = useState('')
   const [enteredDate, setEnteredDate] = useState('')
+  const [show, setShow] = useState(false)
 
   // const [userInput, setUserInput] = useState({
   //     enteredTitle: '',
@@ -60,6 +62,10 @@ const ExpenseForm = (props) => {
     setEnteredDate('')
   }
 
+  const clickHandler = (event) => {
+    setShow(false)
+  }
+
   return <form onSubmit={submitHandler}>
             <div className="new-expense__controls">
                 <div className="new-expense__control">
@@ -76,9 +82,14 @@ const ExpenseForm = (props) => {
                 </div>
             </div>
         <div className="new-expense__actions">
-            <button type="submit">Add Expense</button>
+            <button className={show} type="submit">Cancel</button>
+            <button type="submit" onClick={clickHandler}>Add Expense</button>
         </div>
         </form>
+}
+
+ExpenseForm.propTypes = {
+  onSaveExpenseData: PropTypes.any
 }
 
 export default ExpenseForm

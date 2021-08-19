@@ -1,5 +1,6 @@
 import React from 'react'
 import './ExpenseDate.css'
+import PropTypes from 'prop-types'
 
 function ExpenseDate (props) {
   const month = props.date.toLocaleString('en-US', { month: 'long' })
@@ -13,6 +14,10 @@ function ExpenseDate (props) {
             <div className="expense-date__day">{day}</div>
         </div>
   )
+}
+
+ExpenseDate.propTypes = {
+  date: PropTypes.string
 }
 
 export default ExpenseDate

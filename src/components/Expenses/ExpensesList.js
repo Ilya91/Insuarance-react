@@ -2,6 +2,7 @@ import React from 'react'
 
 import './ExpensesList.css'
 import ExpenseItem from './ExpenseItem'
+import PropTypes from 'prop-types'
 
 const ExpensesList = (props) => {
   if (props.items.length === 0) {
@@ -22,6 +23,10 @@ const ExpensesList = (props) => {
             }
         </ul>
   )
+}
+
+ExpensesList.propTypes = {
+  items: PropTypes.array
 }
 
 export default ExpensesList

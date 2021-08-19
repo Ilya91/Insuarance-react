@@ -1,6 +1,7 @@
 import React from 'react'
 import './NewExpense.css'
 import ExpenseForm from './ExpenseForm'
+import PropTypes from 'prop-types'
 
 const NewExpense = (props) => {
   const saveExpenseDataHandler = (enteredExpenseData) => {
@@ -14,6 +15,10 @@ const NewExpense = (props) => {
   return <div className="new-expense">
         <ExpenseForm onSaveExpenseData={saveExpenseDataHandler}/>
     </div>
+}
+
+NewExpense.propTypes = {
+  onAddExpense: PropTypes.any
 }
 
 export default NewExpense
