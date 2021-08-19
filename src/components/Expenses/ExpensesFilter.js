@@ -1,13 +1,13 @@
-import React from 'react';
+import React from 'react'
 
-import './ExpensesFilter.css';
+import './ExpensesFilter.css'
 
 const ExpensesFilter = (props) => {
-    const changeFilterHandler = event => {
-        props.onChangeFilter(event.target.value);
-    };
+  const changeFilterHandler = event => {
+    props.onChangeFilter(event.target.value)
+  }
 
-    return (
+  return (
         <div className='expenses-filter'>
             <div className='expenses-filter__control'>
                 <label>Filter by year</label>
@@ -19,7 +19,7 @@ const ExpensesFilter = (props) => {
                 </select>
             </div>
         </div>
-    );
-};
+  )
+}
 
-export default ExpensesFilter;
+export default ExpensesFilter
